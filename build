@@ -1,0 +1,5 @@
+CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o network-delay-exec .
+docker build --no-cache -t 127.0.0.1:5080/network-delay-exec:v1 .
+rm -rf network-delay-exec
+
+docker push 127.0.0.1:5080/network-delay-exec:v1
